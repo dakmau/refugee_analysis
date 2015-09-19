@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :locations, only: [:create]
       resources :destinations, only: [:create]
-      resources :persons, only: [:create]
+      resources :users, only: [:create]
     end
   end
 
