@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       resources :locations, only: [:create]
       resources :destinations, only: [:create]
       resources :users, only: [:create]
+      resources :posts, only: [:create]
     end
   end
 
