@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
-      resources :locations
-      resources :destinations
-      resources :persons
+      resources :locations, only: [:create]
+      resources :destinations, only: [:create]
+      resources :persons, only: [:create]
     end
   end
 
   resources :locations
+  get 'refugee_search', to: 'pages#refugee_search'
+  get 'refugee_show', to: 'pages#refugee_show'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

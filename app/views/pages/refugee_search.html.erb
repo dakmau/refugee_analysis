@@ -1,1 +1,11 @@
-<p>Enter the name of the refugee you'd like to search</p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <p>Enter the name of the refugee you'd like to search</p>
+      <%= form_tag '/refugee_show', method: :get do %>
+        <%= text_field_tag(:name) %>
+        <%= submit_tag("Search") %>
+      <% end %>
+    </div>
+  </div>
+</div>
