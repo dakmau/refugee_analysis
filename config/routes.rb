@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   end
 
   root to: 'home#home'
+  resources :posts
   resources :locations
   resources :users
   get 'refugee_search', to: 'pages#refugee_search'
