@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   end
 
   resources :locations
+  resources :users
   get 'refugee_search', to: 'pages#refugee_search'
   get 'refugee_show', to: 'pages#refugee_show'
 
