@@ -1,3 +1,6 @@
+<% @posts.each do |post| %>
+<div class="posts" data-lat="<%= post.latitude %>" data-lng="<%= post.longitude %>" data-msg="<%= post.message %>"></div>
+<% end %>
 <div class="container">
   <h2>Refugee status</h2>
 <div style='width: 800px;'>
@@ -10,13 +13,13 @@
 <script>
 var handler = Gmaps.build('Google');
 handler.buildMap({ internal: {id: 'multi_overlays multi_markers'}}, function(){
-  var markers = handler.addMarkers([
-    { lat: 43, lng: 3.5, infowindow: "hello"},
-    { lat: 45, lng: 4, infowindow: "hello"},
-    { lat: 47, lng: 3.5, infowindow: "hello"},
-    { lat: 49, lng: 4, infowindow: "hello"},
-    { lat: 51, lng: 3.5, infowindow: "hello"}
-  ]);
+  var posts = document.getElementsByClassName("posts");
+  var markers_array = [];
+  for(var i = 0; i < posts.length; i++)
+  {
+     markers_array.push({lat: posts[i].getAttribute("data-lat"), lng: posts[i].getAttribute("data-lng"), infowindow: posts[i].getAttribute("data-msg")});
+  }
+  var markers = handler.addMarkers(markers_array);
   handler.bounds.extendWith(markers);
   handler.fitMapToBounds();
 });

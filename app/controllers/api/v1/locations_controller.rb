@@ -3,6 +3,8 @@
 module Api
   module V1
     class LocationsController < ApplicationController
+      skip_before_filter  :verify_authenticity_token
+
       def create
         user = User.find(params[:user_id])
         destination = user.destinations.create(address: params[:address], latitude: params[:latitude], longitude: params[:longitude])

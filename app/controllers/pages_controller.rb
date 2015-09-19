@@ -2,7 +2,6 @@ class PagesController < ApplicationController
 
   def government
     @posts = Post.all.limit(100)
-    byebug
   end
 
   def refugee_search
