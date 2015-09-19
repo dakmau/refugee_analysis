@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <p>Enter the name of the refugee you'd like to create</p>
+      <%= form_for @user do |f| %>
+        <%= f.text_field :name %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
