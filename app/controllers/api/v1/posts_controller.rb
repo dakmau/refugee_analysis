@@ -7,6 +7,8 @@ module Api
 
       def create
         post = Post.create(message: params[:message], latitude: params[:latitude], longitude: params[:longitude])
+        Indico.api_key = '6b911bcc3dc867c5d5b9946b2f5b3345'
+        post.positivity = Indico.sentiment(message)
         if post.save
           render json: {status: 200}
         end
