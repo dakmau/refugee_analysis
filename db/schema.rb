@@ -11,20 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150919061230) do
+ActiveRecord::Schema.define(version: 20150919070845) do
+
+  create_table "destinations", force: :cascade do |t|
+    t.string   "address"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "destinations", ["user_id"], name: "index_destinations_on_user_id"
 
   create_table "locations", force: :cascade do |t|
     t.string   "address"
     t.float    "latitude"
     t.float    "longitude"
-    t.integer  "person_id"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "locations", ["person_id"], name: "index_locations_on_person_id"
+  add_index "locations", ["user_id"], name: "index_locations_on_user_id"
 
-  create_table "people", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "name",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
