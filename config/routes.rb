@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :users
   get 'refugee_search', to: 'pages#refugee_search'
   get 'refugee_show', to: 'pages#refugee_show'
+  get 'government', to: 'pages#government'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
