@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  resources :locations
-
   namespace :api do
     namespace :v1 do
       resources :locations
@@ -8,6 +6,8 @@ Rails.application.routes.draw do
       resources :persons
     end
   end
+
+  resources :locations
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
