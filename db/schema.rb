@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150919202540) do
+ActiveRecord::Schema.define(version: 20150920070729) do
 
   create_table "destinations", force: :cascade do |t|
     t.string   "address"
@@ -44,6 +44,15 @@ ActiveRecord::Schema.define(version: 20150919202540) do
     t.datetime "updated_at", null: false
     t.float    "positivity"
   end
+
+  create_table "tags", force: :cascade do |t|
+    t.string   "word"
+    t.integer  "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "tags", ["post_id"], name: "index_tags_on_post_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name",       null: false
