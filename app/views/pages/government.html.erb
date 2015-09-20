@@ -33,7 +33,7 @@ handler.buildMap({ internal: {id: 'multi_overlays multi_markers'}}, function(){
   var movements_array = [];
   for(var i = 0; i < movements.length; i++)
   {
-     movements_array.push([{lat: movements[i].getAttribute("data-latl"), lng: movements[i].getAttribute("data-lngl") },{lat: movements[i].getAttribute("data-latd"), lng: movements[i].getAttribute("data-lngl") }]);
+     movements_array.push([{lat: movements[i].getAttribute("data-latl"), lng: movements[i].getAttribute("data-lngl") },{lat: movements[i].getAttribute("data-latd"), lng: movements[i].getAttribute("data-lngd") }]);
   }
   var polylines = handler.addPolylines(movements_array, { strokeColor: '#FF0000'});
 
