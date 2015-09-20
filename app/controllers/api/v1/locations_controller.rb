@@ -7,8 +7,8 @@ module Api
 
       def create
         user = User.find(params[:user_id])
-        destination = user.destinations.create(address: params[:address], latitude: params[:latitude], longitude: params[:longitude])
-        if destination.save
+        location = user.locations.create(address: params[:address], latitude: params[:latitude], longitude: params[:longitude])
+        if location.save
            render :json => {:status => 200}.to_json
         end
       end
