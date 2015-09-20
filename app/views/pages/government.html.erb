@@ -2,7 +2,7 @@
   <div class="posts" data-lat="<%= post.latitude %>" data-lng="<%= post.longitude %>" data-msg="<%= post.message %>" data-pos="<%= post.positivity %>"></div>
 <% end %>
 <% @users.each do |user| %>
-  <div class="movements" data-latl="<%= user.locations.last.latitude %>" data-lngl"<%= user.locations.last.longitude %>" data-latd"<%= user.destinations.last.latitude %>" data-lngd"<%= user.destinations.last.longitude %>"></div>
+  <div class="movements" data-latl="<%= user.locations.last.latitude %>" data-lngl="<%= user.locations.last.longitude %>" data-latd="<%= user.destinations.last.latitude %>" data-lngd="<%= user.destinations.last.longitude %>"></div>
 <% end %>
 <div class="container">
   <h2>Refugee status</h2>
