@@ -21,7 +21,7 @@ handler.buildMap({ internal: {id: 'multi_overlays multi_markers'}}, function(){
   {
      markers_array.push({lat: posts[i].getAttribute("data-lat"), lng: posts[i].getAttribute("data-lng"), infowindow: posts[i].getAttribute("data-msg")});
      if (posts[i].getAttribute("data-pos") < 0.6){
-        circles.push({lng: posts[i].getAttribute("data-lng"), lat: posts[i].getAttribute("data-lat"), radius: 100000})
+        circles.push({lng: posts[i].getAttribute("data-lng"), lat: posts[i].getAttribute("data-lat"), radius: 150000})
      }
   }
   var markers = handler.addMarkers(markers_array);
