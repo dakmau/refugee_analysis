@@ -35,7 +35,6 @@ handler.buildMap({ internal: {id: 'multi_overlays multi_markers'}}, function(){
   {
      movements_array.push([{lat: movements[i].getAttribute("data-latl"), lng: movements[i].getAttribute("data-lngl") },{lat: movements[i].getAttribute("data-latd"), lng: movements[i].getAttribute("data-lngl") }]);
   }
-  console.log(movements_array);
   var polylines = handler.addPolylines(movements_array, { strokeColor: '#FF0000'});
 
   handler.bounds.extendWith(markers);
