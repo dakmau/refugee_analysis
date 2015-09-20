@@ -11,7 +11,7 @@ module Api
         post.positivity = Indico.sentiment(post.message)
         keyword_hash = Indico.keywords(post.message)
         keyword_hash.each do |key, value|
-          post.tags.create(word: key)
+          post.tags.create(word: key, latitude: post.latitude, longitude: post.longitude)
         end
         if post.save
           render json: {status: 200}

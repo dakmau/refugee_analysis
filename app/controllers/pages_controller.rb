@@ -3,6 +3,11 @@ class PagesController < ApplicationController
   def government
     @posts = Post.all.limit(100)
     @users = User.all.limit(100)
+
+    #keywords
+    @berlin_tags = Tag.near("Berlin", 150)
+    @istanbul_tags = Tag.near("Istanbul", 150)
+    @toronto_tags = Tag.near("Toronto", 150)
   end
 
   def refugee_search
