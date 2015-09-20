@@ -19,12 +19,16 @@ handler.buildMap({ internal: {id: 'multi_overlays multi_markers'}}, function(){
   var posts = document.getElementsByClassName("posts");
   var markers_array = [];
   var circles = [];
+  var gircles = [];
   var circle_options = { strokeColor:"#FF0000",strokeOpacity: 0.5, strokeWeight: 3, fillColor: '#FF0000', fillOpacity: 0.35 }
+  var gircle_options = { strokeColor:"#FF0000",strokeOpacity: 0.5, strokeWeight: 3, fillColor: '#00aaaa', fillOpacity: 0.35 }
   for(var i = 0; i < posts.length; i++)
   {
      markers_array.push({lat: posts[i].getAttribute("data-lat"), lng: posts[i].getAttribute("data-lng"), infowindow: posts[i].getAttribute("data-msg")});
      if (posts[i].getAttribute("data-pos") < 0.6){
         circles.push({lng: posts[i].getAttribute("data-lng"), lat: posts[i].getAttribute("data-lat"), radius: 150000})
+     } else {
+        gircles.push({lng: posts[i].getAttribute("data-lng"), lat: posts[i].getAttribute("data-lat"), radius: 150000})
      }
   }
   var markers = handler.addMarkers(markers_array);
@@ -40,6 +44,7 @@ handler.buildMap({ internal: {id: 'multi_overlays multi_markers'}}, function(){
   handler.bounds.extendWith(markers);
   handler.bounds.extendWith(polylines);
   handler.addCircles(circles, circle_options);
+  handler.addCircles(gircles, gircle_options);
   handler.fitMapToBounds();
 });
 </script>
